@@ -1,0 +1,6 @@
+<webscript>
+    <shortname>Admin Console treelist-manager Component</shortname>
+    <description>Administration Console - treelist-manager Console</description>
+    <url>/acando/components/console/treelistmanager/treelist-manager</url>
+    <family>admin-console</family>
+</webscript>

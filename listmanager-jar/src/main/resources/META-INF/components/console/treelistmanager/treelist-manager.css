@@ -1,0 +1,100 @@
+.icon-ppt { display:block; height: 22px; padding-left: 20px; background: transparent url(icons.png) 0 0px no-repeat; }
+.icon-dmg { display:block; height: 22px; padding-left: 20px; background: transparent url(icons.png) 0 -36px no-repeat; }
+.icon-prv { display:block; height: 22px; padding-left: 20px; background: transparent url(icons.png) 0 -72px no-repeat; }
+.icon-gen { display:block; height: 22px; padding-left: 20px; background: transparent url(icons.png) 0 -108px no-repeat; }
+.icon-doc { display:block; height: 22px; padding-left: 20px; background: transparent url(icons.png) 0 -144px no-repeat; }
+.icon-jar { display:block; height: 22px; padding-left: 20px; background: transparent url(icons.png) 0 -180px no-repeat; }
+.icon-zip { display:block; height: 22px; padding-left: 20px; background: transparent url(icons.png) 0 -216px no-repeat; }
+.htmlnodelabel { margin-left: 20px; }
+
+.yuimenuitemlabel {
+	font-family: sans-serif;
+}
+.helptext {
+	padding-bottom:10px;
+}
+.list-item {
+	font-size: 1em;
+	font-style: italic;
+}
+.list-folder {
+	font-size: 1.0em;
+	font-weight: bold;
+}
+.list-root {
+	font-size: 1.1em;
+	font-weight: bold;
+}
+#yui-history-iframe
+{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 1px;
+   height: 1px;
+   visibility: hidden;
+}
+.sample-console
+{
+   margin: 16px 10px 10px;
+}
+.sample-console .title
+{
+   font-size: 123.1%;
+   font-weight: bold;
+   padding-bottom: 0.5em;
+}
+.sample-console-buttons
+{
+	margin-top: 1em;
+}
+
+div.workarea { padding:10px; float:left }
+
+
+ul.draglist { 
+    position: relative;
+    width: 200px; 
+    background: #f7f7f7;
+    border: 1px solid gray;
+    list-style: none;
+    margin:2px;
+    padding:2px;
+    padding-bottom:20px;
+}
+
+ul.draglist li {
+    
+    padding:2px;
+    cursor: move;
+    zoom: 1;
+    margin:2px;
+}
+
+ul.draglist_alt { 
+    position: relative;
+    width: 200px; 
+    list-style: none;
+    margin:0;
+    padding:0;
+    /*
+       The bottom padding provides the cushion that makes the empty 
+       list targetable.  Alternatively, we could leave the padding 
+       off by default, adding it when we detect that the list is empty.
+    */
+    padding-bottom:20px;
+}
+
+ul.draglist_alt li {
+    margin: 1px;
+    cursor: move; 
+}
+
+
+li.list1 {
+    background-color: #DCEAF4;
+    border:1px solid #7EA6B2;
+    
+}
+/****************************************************************************/
+

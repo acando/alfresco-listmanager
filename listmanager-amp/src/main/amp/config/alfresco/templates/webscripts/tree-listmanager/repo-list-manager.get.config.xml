@@ -1,0 +1,4 @@
+<module-config>
+   <listpath>/app:company_home/app:dictionary</listpath>
+   <listname>Lists</listname>
+</module-config>

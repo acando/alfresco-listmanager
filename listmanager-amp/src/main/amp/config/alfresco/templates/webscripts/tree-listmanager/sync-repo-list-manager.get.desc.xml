@@ -1,0 +1,8 @@
+<webscript>
+    <shortname>list Manager Repo Webscript</shortname>
+    <description>Administration Console - list-manager Console (REPO) </description>
+    <url>/acando/console/sync-treelist-manager/{parentNodeRef}/{action}</url>
+    <format default="json"/>
+	<authentication>user</authentication>
+	<transaction>required</transaction>
+</webscript>

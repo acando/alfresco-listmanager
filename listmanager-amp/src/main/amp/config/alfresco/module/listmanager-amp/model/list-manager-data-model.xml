@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<model name="acutil:listmanager-model" xmlns="http://www.alfresco.org/model/dictionary/1.0">
+
+	<description>List Manager List Model</description>
+	<author>Marcus Cedergren</author>
+	<version>0.1</version>
+
+	<!-- Imports are required to allow references to definitions in other models -->
+	<imports>
+		<!-- Import Alfresco Dictionary Definitions -->
+		<import uri="http://www.alfresco.org/model/dictionary/1.0"
+			prefix="d" />
+		<!-- Import Alfresco Content Domain Model Definitions -->
+		<import uri="http://www.alfresco.org/model/content/1.0" prefix="cm" />
+		<!-- Import Alfresco Content Domain Model Definitions -->
+		<import uri="http://www.alfresco.org/model/system/1.0" prefix="sys" />
+
+		
+		
+	</imports>
+
+	<namespaces>
+		<namespace uri="http://www.acando.com/model/listmanager/1.0"
+			prefix="acutil" />
+	</namespaces>
+
+
+	<aspects>
+		<aspect name="acutil:sortable">
+			<properties>
+				<property name="acutil:ordinalNumber">
+					<title>Sortorder</title>
+					<type>d:int</type>
+				</property>
+			</properties>
+		</aspect>
+	</aspects>
+	
+</model>
