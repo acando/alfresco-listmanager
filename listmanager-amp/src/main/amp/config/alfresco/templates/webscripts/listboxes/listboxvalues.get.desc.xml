@@ -1,0 +1,7 @@
+<webscript>
+   <shortname>Get listbox values</shortname>
+   <description>templateArg listboxname maps to data-dictionary/listboxar/{listboxname} the children of this node is returned.</description>
+   <url>/listbox/{listboxname}</url>
+   <format default="json">argument</format>
+   <authentication>user</authentication>
+</webscript>
