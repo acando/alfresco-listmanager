@@ -5,7 +5,11 @@ need to restart Alfresco after editing the lists (which is the case when using c
 
 ## Authors
 [Marcus Cedergren](https://github.com/masse),
+
 [Erik Billerby](https://github.com/billerby) 
+
+### Contributors
+[Bertrand Forest](https://github.com/bforest)
 
 ## Getting started
 
