@@ -1,6 +1,6 @@
 # [Alfresco](http://www.alfresco.com) listmanager
-This addon provides a way to manage list of values to be used in alfresco metadata forms. This is for the times you do not want to
-use model provided constraints.
+This addon provides a way to manage list of values to be used in alfresco metadata forms. The model provided constraints are not 
+always suitable to use. Sometimes you just want to pick a value from a list without constraining anything.
 
 ## Getting started
 
@@ -8,15 +8,15 @@ use model provided constraints.
 
 #### Alfresco
 
-The extension is created with [Alfresco Maven SDK](https://arti
-facts.alfresco.com/nexus/content/repositories/alfresco-docs/alfresco-lifecycle-aggregator/latest/index.html) and compiles against Alfresco Community 4.2.c. It's also been tested with:
+The extension is created with the [Alfresco Maven SDK](https://arti
+facts.alfresco.com/nexus/content/repositories/alfresco-docs/alfresco-lifecycle-aggregator/latest/index.html) and compiles against Alfresco Community 4.2.c. It has also been tested with:
 
 * Alfresco Community 4.0.e and higher
 * Alfresco Enterprise 4.0.2 and higher
 
 ### Building
 
-The project use [Maven](http://maven.apache.org) (at least 3.0.x) for building.
+The project use [Maven](http://maven.apache.org) for building.
 
 Get the source, enter the directory and execute
 
@@ -26,11 +26,40 @@ to build and install the artifact in your local Maven repository.
 
 The output is one amp to be installed into the repository part of your alfresco installation and one jar-file that is needed by Share.
 
-Declare those as dependencies in your artifacts (if you are using the Maven SDK), or, otherwise drop the jar-file in to ```tomcat/shared/classes``` of your installation.
+Declare those as dependencies in your artifacts (if you are using the Maven SDK), 
+For Share:
+```
+		<dependency>
+		    <groupId>com.acando.alfresco</groupId>
+		    <artifactId>listmanager-jar</artifactId>
+		    <version>1.0-SNAPSHOT</version>
+		    <scope>runtime</scope>
+		</dependency>
+```
+For the Repository:
+```
+ 		<dependency>
+ 		    <groupId>com.acando.alfresco</groupId>
+ 		    <artifactId>listmanager-amp</artifactId>
+ 		    <version>1.0-SNAPSHOT</version>
+ 		    <type>amp</type>
+ 		</dependency>
+```
+Don't forget to add it as an overlay in the maven-war-plugin configuration as well:
+```...
+                        <overlay>
+                            <groupId>com.acando.alfresco</groupId>
+ 		    				<artifactId>listmanager-amp</artifactId>
+                            <type>amp</type>
+                        </overlay>...
+```
+or, otherwise drop the jar-file in to ```tomcat/shared/classes``` of your installation and install the amp with the mmt-tool.
 
 ### Usage
 
 When correctly installed a new GUI can be found in the Admin console part of Alfresco Share Application Settings -> List Manager.
+
+![Screenshot](/images/screenshot_listmanager.jpg "Screenshot")
 
 To make use of the values from one list, use the customselectone.ftl form control supplied like this:
 
@@ -42,7 +71,7 @@ To make use of the values from one list, use the customselectone.ftl form contro
 ```
 Where "changeRequest_status" is the name of a list containing all change request statuses that our listbox should contain.
 
-![Screenshot](/images/screenshot_listmanager.jpg "Screenshot")
+
 
 
 
