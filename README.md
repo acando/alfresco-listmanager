@@ -47,11 +47,11 @@ For the Repository:
 ```
 Don't forget to add it as an overlay in the maven-war-plugin configuration as well:
 ```...
-                        <overlay>
-                            <groupId>com.acando.alfresco</groupId>
- 		    				<artifactId>listmanager-amp</artifactId>
-                            <type>amp</type>
-                        </overlay>...
+        <overlay>
+            <groupId>com.acando.alfresco</groupId>
+			<artifactId>listmanager-amp</artifactId>
+            <type>amp</type>
+        </overlay>...
 ```
 or, otherwise drop the jar-file in to ```tomcat/shared/classes``` of your installation and install the amp with the mmt-tool.
 
