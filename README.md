@@ -63,11 +63,12 @@ When correctly installed a new GUI can be found in the Admin console part of Alf
 
 To make use of the values from one list, use the customselectone.ftl form control supplied like this:
 
-```					<field id="ac:changeRequestStatus">
-							<control template="/org/alfresco/components/form/controls/customselectone.ftl">
-                				<control-param name="listboxname">changeRequest_status</control-param>
-                			</control>                   
-             		</field>
+```					
+<field id="ac:changeRequestStatus">
+		<control template="/org/alfresco/components/form/controls/customselectone.ftl">
+			<control-param name="listboxname">changeRequest_status</control-param>
+		</control>                   
+</field>
 ```
 Where "changeRequest_status" is the name of a list containing all change request statuses that our listbox should contain.
 
