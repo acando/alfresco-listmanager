@@ -1,6 +1,11 @@
 # [Alfresco](http://www.alfresco.com) listmanager
 This addon provides a way to manage list of values to be used in alfresco metadata forms. The model provided constraints are not 
-always suitable to use. Sometimes you just want to pick a value from a list without constraining anything.
+always suitable to use. Sometimes you just want to pick a value from a list without constraining anything. In addition there is no
+need to restart Alfresco after editing the lists (which is the case when using contraints).
+
+## Authors
+[Marcus Cedergren](https://github.com/masse),
+[Erik Billerby](https://github.com/billerby) 
 
 ## Getting started
 
@@ -8,7 +13,7 @@ always suitable to use. Sometimes you just want to pick a value from a list with
 
 #### Alfresco
 
-The extension is created with the [Alfresco Maven SDK](https://arti
+This extension is created with the [Alfresco Maven SDK](https://arti
 facts.alfresco.com/nexus/content/repositories/alfresco-docs/alfresco-lifecycle-aggregator/latest/index.html) and compiles against Alfresco Community 4.2.c. It has also been tested with:
 
 * Alfresco Community 4.0.e and higher
@@ -16,15 +21,15 @@ facts.alfresco.com/nexus/content/repositories/alfresco-docs/alfresco-lifecycle-a
 
 ### Building
 
-The project use [Maven](http://maven.apache.org) for building.
+The project uses [Maven](http://maven.apache.org) for building.
 
-Get the source, enter the directory and execute
+Clone the source, enter the directory and execute
 
 `mvn clean install`
 
 to build and install the artifact in your local Maven repository.
 
-The output is one amp to be installed into the repository part of your alfresco installation and one jar-file that is needed by Share.
+The output is one amp-file to be installed into the repository part of your Alfresco installation and one jar-file that is needed by Alfresco Share.
 
 Declare those as dependencies in your artifacts (if you are using the Maven SDK), 
 For Share:
