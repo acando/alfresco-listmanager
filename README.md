@@ -72,7 +72,7 @@ To make use of the values from one list, use the customselectone.ftl form contro
 ```
 Where "changeRequest_status" is the name of a list containing all change request statuses that our listbox should contain.
 
-
+![Screenshot](/images/screenshot_crlist.jpg "Screenshot")
 
 
 
