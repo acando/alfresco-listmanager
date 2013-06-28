@@ -504,7 +504,7 @@ if (typeof Acando == "undefined" || !Acando)
             // Add default top-level node
             this.buildTreeNode(
             {
-               label: "Listor",
+               label: Alfresco.util.message("tool.treelist-manager.rootnode.label"),
                type: "text",
                nodeRef: null,
                isLeaf:false,
