@@ -1,70 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
-    <modelVersion>4.0.0</modelVersion>
-    <groupId>com.acando.alfresco</groupId>
-    <artifactId>listmanager</artifactId>
-    <version>1.0-SNAPSHOT</version>
-    <name>Alfresco Listmanager Parent POM</name>
-    <packaging>pom</packaging>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.acando.alfresco</groupId>
+	<artifactId>listmanager</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<name>Alfresco Listmanager Parent POM</name>
+	<packaging>pom</packaging>
 
-    <parent>
-        <groupId>org.alfresco.maven</groupId>
-        <artifactId>alfresco-sdk-parent</artifactId>
-        <version>1.0</version>
-    </parent>
+	<parent>
+		<groupId>org.alfresco.maven</groupId>
+		<artifactId>alfresco-sdk-parent</artifactId>
+		<version>1.0</version>
+	</parent>
+	<licenses>
+		<license>
+			<name>The Apache Software License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+		</license>
+	</licenses>
+	<scm>
+		<url>https://github.com/acando/alfresco-listmanager</url>
+	</scm>
+	<modules>
+		<module>listmanager-jar</module>
+		<module>listmanager-amp</module>
+	</modules>
 
-    <modules>
-    <module>listmanager-jar</module>
-    <module>listmanager-amp</module>
-  </modules>
+	<!-- | SDK properties have sensible defaults in the SDK parent, | but you 
+		can override the properties below to use another version. | For more available 
+		properties see the alfresco-sdk-parent POM. -->
+	<properties>
+		<alfresco.groupId>org.alfresco</alfresco.groupId>
+		<alfresco.version>4.2.c</alfresco.version>
+		<app.log.root.level>WARN</app.log.root.level>
+		<alfresco.data.location>alf_data_dev</alfresco.data.location>
+		<!-- This controls which properties will be picked in src/test/properties 
+			for embedded run -->
+		<env>local</env>
+		<alfresco.repository.url>http://localhost:8080/repository-amp</alfresco.repository.url>
+	</properties>
 
-    <!--
-       | SDK properties have sensible defaults in the SDK parent,
-       | but you can override the properties below to use another version. 
-       | For more available properties see the alfresco-sdk-parent POM. 
-       -->
-    <properties>
-        <alfresco.groupId>org.alfresco</alfresco.groupId>
-        <alfresco.version>4.2.c</alfresco.version>
-        <app.log.root.level>WARN</app.log.root.level>
-        <alfresco.data.location>alf_data_dev</alfresco.data.location>
-        <!-- This controls which properties will be picked in src/test/properties for embedded run -->
-        <env>local</env>
-        <alfresco.repository.url>http://localhost:8080/repository-amp</alfresco.repository.url>
-    </properties>
+	<!-- Here we realize the connection with the Alfresco selected platform 
+		(e.g.version and edition) -->
+	<dependencyManagement>
+		<dependencies>
+			<!-- This will import the dependencyManagement for all artifacts in the 
+				selected Alfresco version/edition (see http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) 
+				NOTE: You still need to define dependencies in your POM, but you can omit 
+				version as it's enforced by this dependencyManagement. NOTE: It defaults 
+				to the latest version this SDK pom has been tested with, but alfresco version 
+				can/should be overridden in your project's pom -->
+			<dependency>
+				<groupId>${alfresco.groupId}</groupId>
+				<artifactId>alfresco-platform-distribution</artifactId>
+				<version>${alfresco.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
-    <!-- Here we realize the connection with the Alfresco selected platform 
-        (e.g.version and edition) -->
-    <dependencyManagement>
-        <dependencies>
-            <!-- This will import the dependencyManagement for all artifacts in the selected Alfresco version/edition
-                (see http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies) 
-                NOTE: You still need to define dependencies in your POM, but you can omit version as it's enforced by this dependencyManagement. NOTE: It defaults 
-                to the latest version this SDK pom has been tested with, but alfresco version can/should be overridden in your project's pom -->
-            <dependency>
-                <groupId>${alfresco.groupId}</groupId>
-                <artifactId>alfresco-platform-distribution</artifactId>
-                <version>${alfresco.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-
-    <!-- This repository is only needed to retrieve Alfresco parent POM. 
-        NOTE: This can be removed when/if Alfresco will be on Maven Central -->
-    <repositories>
-        <repository>
-            <id>alfresco-public</id>
-            <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
-        </repository>
-        <repository>
-            <id>alfresco-public-snapshots</id>
-            <url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>daily</updatePolicy>
-            </snapshots>
-        </repository>
-    </repositories>
+	<!-- This repository is only needed to retrieve Alfresco parent POM. NOTE: 
+		This can be removed when/if Alfresco will be on Maven Central -->
+	<repositories>
+		<repository>
+			<id>alfresco-public</id>
+			<url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
+		</repository>
+		<repository>
+			<id>alfresco-public-snapshots</id>
+			<url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
+			<snapshots>
+				<enabled>true</enabled>
+				<updatePolicy>daily</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
 </project>
