@@ -1,4 +1,4 @@
-# [Alfresco](http://www.alfresco.com) listmanager
+# [Alfresco](http://www.alfresco.com) Listmanager
 This addon provides a way to manage list of values to be used in alfresco metadata forms. The model provided constraints are not 
 always suitable to use. Sometimes you just want to pick a value from a list without constraining anything. In addition there is no
 need to restart Alfresco after editing the lists (which is the case when using contraints).
@@ -17,7 +17,7 @@ need to restart Alfresco after editing the lists (which is the case when using c
 
 #### Alfresco
 
-This extension is created with the [Alfresco Maven SDK](https://arti
+This extension was created with the [Alfresco Maven SDK](https://arti
 facts.alfresco.com/nexus/content/repositories/alfresco-docs/alfresco-lifecycle-aggregator/latest/index.html) and compiles against Alfresco Community 4.2.c. It has also been tested with:
 
 * Alfresco Community 4.0.e and higher
