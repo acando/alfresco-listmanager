@@ -84,4 +84,10 @@ Where "changeRequest_status" is the name of a list containing all change request
 ![Screenshot](/images/screenshot_crlist.jpg "Screenshot")
 
 
+### Issue Management
+If you want to report a bug please create a new [issue](https://github.com/acando/alfresco-listmanager/issues)
+
+### Contributions
+Contributions are welcome. Clone the project, implement the change/feature and submit a github [pull request](https://github.com/acando/alfresco-listmanager/pulls).
+
 
