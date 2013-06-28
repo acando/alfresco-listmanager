@@ -19,9 +19,31 @@
 			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
 		</license>
 	</licenses>
+	<developers>
+		<developer>
+			<id>masse</id>
+			<name>Marcus Cedergren</name>
+			<email>marcus.cedergren@gmail.com</email>
+			<organization>Acando</organization>
+			<organizationUrl>http://www.acando.com</organizationUrl>
+			<timezone>+1</timezone>
+		</developer>
+		<developer>
+			<id>billerby</id>
+			<name>Erik Billerby</name>
+			<email>billerby@gmail.com</email>
+			<organization>Redpill Linpro</organization>
+			<organizationUrl>http://www.redpill-linpro.se</organizationUrl>
+			<timezone>+1</timezone>
+		</developer>
+	</developers>
+	
 	<scm>
 		<url>https://github.com/acando/alfresco-listmanager</url>
+		<connection>scm:git:git://github.com/acando/alfresco-listmanager.git</connection>
+		<developerConnection>scm:git:git@github.com:acando/alfresco-listmanager.git</developerConnection>
 	</scm>
+
 	<modules>
 		<module>listmanager-jar</module>
 		<module>listmanager-amp</module>
@@ -39,6 +61,7 @@
 			for embedded run -->
 		<env>local</env>
 		<alfresco.repository.url>http://localhost:8080/repository-amp</alfresco.repository.url>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
 	<!-- Here we realize the connection with the Alfresco selected platform 
@@ -61,6 +84,15 @@
 		</dependencies>
 	</dependencyManagement>
 
+	<build>
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-release-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
 	<!-- This repository is only needed to retrieve Alfresco parent POM. NOTE: 
 		This can be removed when/if Alfresco will be on Maven Central -->
 	<repositories>
