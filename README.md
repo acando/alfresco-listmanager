@@ -64,6 +64,12 @@ Don't forget to add it as an overlay in the maven-war-plugin configuration as we
 ```
 or, otherwise drop the jar-file in to ```tomcat/shared/classes``` of your installation and install the amp with the mmt-tool.
 
+### Downloadable binaries
+
+The latest version binaries can also be downloaded for manual installation as stated above.
+[listmanager-amp.amp](https://s3-eu-west-1.amazonaws.com/alfresco-listmanager-dist/listmanager-amp.amp)
+[listmanager-jar.jar](https://s3-eu-west-1.amazonaws.com/alfresco-listmanager-dist/listmanager-jar.jar)
+
 ### Usage
 
 When correctly installed a new GUI can be found in the Admin console part of Alfresco Share Application Settings -> List Manager.
@@ -88,6 +94,6 @@ Where "changeRequest_status" is the name of a list containing all change request
 If you want to report a bug please create a new [issue](https://github.com/acando/alfresco-listmanager/issues)
 
 ### Contributions
-Contributions are welcome. Clone the project, implement the change/feature and submit a github [pull request](https://github.com/acando/alfresco-listmanager/pulls).
+Contributions are welcome. Clone the project, implement the change/feature and submit to github [pull request](https://github.com/acando/alfresco-listmanager/pulls).
 
 
