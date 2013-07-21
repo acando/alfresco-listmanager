@@ -67,9 +67,10 @@ or, otherwise drop the jar-file in to ```tomcat/shared/classes``` of your instal
 ### Downloadable binaries
 
 The latest version binaries can also be downloaded for manual installation as stated above.
-[listmanager-amp.amp](https://s3-eu-west-1.amazonaws.com/alfresco-listmanager-dist/listmanager-amp.amp)
+Download [the amp file](https://s3-eu-west-1.amazonaws.com/alfresco-listmanager-dist/listmanager-amp.amp)
+and 
+[the jar file](https://s3-eu-west-1.amazonaws.com/alfresco-listmanager-dist/listmanager-jar.jar) 
 
-[listmanager-jar.jar](https://s3-eu-west-1.amazonaws.com/alfresco-listmanager-dist/listmanager-jar.jar)
 
 ### Usage
 
@@ -96,5 +97,4 @@ If you want to report a bug please create a new [issue](https://github.com/acand
 
 ### Contributions
 Contributions are welcome. Clone the project, implement the change/feature and submit to github [pull request](https://github.com/acando/alfresco-listmanager/pulls).
-
 
