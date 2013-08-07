@@ -22,20 +22,22 @@
             <#assign valueToShow=msg("form.control.novalue")>
          <#else>
             <#assign valueToShow=field.value>
-            <#list field.control.params.options?split(optionSeparator) as nameValue>
-               <#if nameValue?index_of(labelSeparator) == -1>
-                  <#if nameValue == field.value?string || (field.value?is_number && field.value?c == nameValue)>
-                     <#assign valueToShow=nameValue>
-                     <#break>
-                  </#if>
-               <#else>
-                  <#assign choice=nameValue?split(labelSeparator)>
-                  <#if choice[0] == field.value?string || (field.value?is_number && field.value?c == choice[0])>
-                     <#assign valueToShow=msgValue(choice[1])>
-                     <#break>
-                  </#if>
-               </#if>
-            </#list>
+            <#if field.control.params.options??>
+	            <#list field.control.params.options?split(optionSeparator) as nameValue>
+	               <#if nameValue?index_of(labelSeparator) == -1>
+	                  <#if nameValue == field.value?string || (field.value?is_number && field.value?c == nameValue)>
+	                     <#assign valueToShow=nameValue>
+	                     <#break>
+	                  </#if>
+	               <#else>
+	                  <#assign choice=nameValue?split(labelSeparator)>
+	                  <#if choice[0] == field.value?string || (field.value?is_number && field.value?c == choice[0])>
+	                     <#assign valueToShow=msgValue(choice[1])>
+	                     <#break>
+	                  </#if>
+	               </#if>
+	            </#list>
+	          </#if>
          </#if>
          <span class="viewmode-value">${valueToShow?html}</span>
       </div>
