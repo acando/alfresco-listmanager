@@ -1,8 +1,8 @@
 [
 <#list listboxvalues as result>
 	{
-   		"label": "${result.properties.name}",
-   		"value": "${result.properties.name}"
+   		"label": "${result.properties.title}",
+   		"value": "${result.properties.title}"
    	}<#if result_has_next>,</#if>
 </#list>
 ]

@@ -19,7 +19,7 @@ function main() {
 	} else {
 		result.nodeRef = startNode.properties["sys:node-uuid"];
 		result.type = "Text";
-		result.label = startNode.properties["cm:name"];
+		result.label = startNode.properties["cm:title"];
 		result.children = findChildren(startNode);
 	}
 	
@@ -41,7 +41,7 @@ function findChildren(folder) {
  
   for (var c=0;c < children.length; c++) {
     var node = children[c];
-	var item = {label : node.properties["cm:name"], editable:true, type: "Text", nodeRef: node.properties["sys:node-uuid"]};
+	var item = {label : node.properties["cm:title"], editable:true, type: "Text", nodeRef: node.properties["sys:node-uuid"]};
     if (node.children && node.children.length>0) {
 		item.isLeaf = false;
 	} else {

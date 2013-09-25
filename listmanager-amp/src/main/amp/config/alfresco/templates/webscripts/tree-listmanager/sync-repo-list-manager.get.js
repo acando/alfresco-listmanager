@@ -15,7 +15,11 @@ function main() {
 
 	// need to create a new node first?
 	if (action == "addFolder") {
-		nodeToChange = parentNode.createFolder(folderName);
+		// Generate a name, we will use the title property for our naming.
+		nodeToChange = parentNode.createNode(null, "cm:folder");
+		nodeToChange.addAspect("cm:titled");
+		nodeToChange.properties["cm:title"]=folderName;
+		nodeToChange.save();
 		
 		if (insertionPoint) {
 			nodeToChange.addAspect("acutil:sortable");
@@ -33,7 +37,7 @@ function main() {
 	} else if (action == "changeName") { 
 		// just a name change for the selected node
 		nodeToChange = search.findNode(prefix + nodeRef);
-		nodeToChange.name = folderName;
+		nodeToChange.properties["cm:title"] = folderName;
 		nodeToChange.save();
 		model.result = "OK";
 		return;

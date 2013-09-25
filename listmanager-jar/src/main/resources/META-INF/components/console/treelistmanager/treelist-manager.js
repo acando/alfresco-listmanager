@@ -452,7 +452,7 @@ if (typeof Acando == "undefined" || !Acando)
 	                scope:this
 	             };
 			
-	            var actionUrl = Alfresco.constants.PROXY_URI + "acando/console/sync-treelist-manager/" + this.root.clazz.oCurrentTextNode.data.nodeRef + "/addFolder/?t=" + oArgs.newValue  + "&i=" + oArgs.node.data.newOrdinal;
+	            var actionUrl = Alfresco.constants.PROXY_URI + "acando/console/sync-treelist-manager/" + this.root.clazz.oCurrentTextNode.data.nodeRef + "/addFolder/?t=" + Alfresco.util.encodeURIPath(oArgs.newValue)  + "&i=" + oArgs.node.data.newOrdinal;
 	             
 	           var transaction = YAHOO.util.Connect.asyncRequest('GET', actionUrl,actionCallback, null);
 
