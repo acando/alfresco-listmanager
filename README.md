@@ -41,7 +41,7 @@ For Share:
 		<dependency>
 		    <groupId>com.acando.alfresco</groupId>
 		    <artifactId>listmanager-jar</artifactId>
-		    <version>1.1-SNAPSHOT</version>
+		    <version>1.3</version>
 		    <scope>runtime</scope>
 		</dependency>
 ```
@@ -50,7 +50,7 @@ For the Repository:
  		<dependency>
  		    <groupId>com.acando.alfresco</groupId>
  		    <artifactId>listmanager-amp</artifactId>
- 		    <version>1.1-SNAPSHOT</version>
+ 		    <version>1.3</version>
  		    <type>amp</type>
  		</dependency>
 ```
@@ -67,9 +67,9 @@ or, otherwise drop the jar-file in to ```tomcat/shared/classes``` of your instal
 ### Downloadable binaries
 
 The latest version binaries can also be downloaded for manual installation as stated above.
-Download [the amp file](https://s3-eu-west-1.amazonaws.com/alfresco-listmanager-dist/listmanager-amp.amp)
+Download [the amp file](https://s3-eu-west-1.amazonaws.com/alfresco-listmanager-dist/listmanager-amp-1.3.amp)
 and 
-[the jar file](https://s3-eu-west-1.amazonaws.com/alfresco-listmanager-dist/listmanager-jar.jar) 
+[the jar file](https://s3-eu-west-1.amazonaws.com/alfresco-listmanager-dist/listmanager-jar-1.3.jar) 
 
 
 ### Usage
