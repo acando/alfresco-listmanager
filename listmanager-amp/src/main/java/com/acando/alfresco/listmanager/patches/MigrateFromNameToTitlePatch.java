@@ -7,11 +7,6 @@ import org.alfresco.repo.admin.patch.AbstractPatch;
 import org.alfresco.repo.model.Repository;
 import org.alfresco.service.cmr.repository.ChildAssociationRef;
 import org.alfresco.service.cmr.repository.NodeRef;
-import org.alfresco.service.cmr.repository.StoreRef;
-import org.alfresco.service.cmr.search.ResultSet;
-import org.alfresco.service.cmr.search.ResultSetRow;
-import org.alfresco.service.cmr.search.SearchParameters;
-import org.alfresco.service.cmr.search.SearchService;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -31,11 +26,10 @@ public class MigrateFromNameToTitlePatch extends AbstractPatch {
   @Override
   protected String applyInternal() throws Exception {
 
-   
+    // Do not use an index driven search in a patch, will fail on solr.
     List<NodeRef> lists = searchService.selectNodes(repository.getRootHome(), XPATH, null, namespaceService, false);
 
-    
-    for (NodeRef list : lists){
+    for (NodeRef list : lists) {
       copyNameToTitle(list);
     }
 
