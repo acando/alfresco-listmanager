@@ -97,14 +97,10 @@
      </plugins>
   </build>
   <!-- This repository is only needed to retrieve Alfresco parent POM. NOTE: This can be removed when/if Alfresco will be on Maven Central -->
-  <repositories>
+ <repositories>
     <repository>
-      <id>alfresco-public</id>
-      <url>https://artifacts.alfresco.com/nexus/content/groups/public</url>
-    </repository>
-    <repository>
-      <id>alfresco-public-snapshots</id>
-      <url>https://artifacts.alfresco.com/nexus/content/groups/public-snapshots</url>
+      <id>redpill-linpro</id>
+      <url>http://maven.redpill-linpro.com/nexus/content/groups/public</url>
       <snapshots>
         <enabled>true</enabled>
         <updatePolicy>daily</updatePolicy>
