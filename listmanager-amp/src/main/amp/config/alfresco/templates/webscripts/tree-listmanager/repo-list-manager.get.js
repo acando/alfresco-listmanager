@@ -4,9 +4,9 @@ function main() {
 	var nodeRef = url.templateArgs.nodeRef;
 	var startNode;
 	if (nodeRef == null || nodeRef == "" || nodeRef == "root") {
-		startNode = search.luceneSearch('PATH:"' + s.listpath + '/cm:' + s.listname +  '"')[0];
+		startNode = search.luceneSearch('workspace://SpacesStore','PATH:"' + s.listpath + '/cm:' + s.listname +  '"')[0];
 		if (startNode == null) {
-			var listLocation =  search.luceneSearch('PATH:"' + s.listpath +  '"')[0];
+			var listLocation =  search.luceneSearch('workspace://SpacesStore','PATH:"' + s.listpath +  '"')[0];
 			startNode = listLocation.createNode(s.listname, "cm:folder");
 			startNode.save();
 		}
