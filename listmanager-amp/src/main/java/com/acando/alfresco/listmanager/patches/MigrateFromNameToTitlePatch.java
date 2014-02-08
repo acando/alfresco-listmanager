@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.alfresco.model.ContentModel;
 import org.alfresco.repo.admin.patch.AbstractPatch;
+import org.alfresco.repo.model.Repository;
 import org.alfresco.service.cmr.repository.ChildAssociationRef;
 import org.alfresco.service.cmr.repository.NodeRef;
 import org.alfresco.service.cmr.repository.StoreRef;
@@ -24,32 +25,20 @@ import com.acando.alfresco.listmanager.util.Util;
 public class MigrateFromNameToTitlePatch extends AbstractPatch {
   private static Log log = LogFactory.getLog(MigrateFromNameToTitlePatch.class);
 
+  Repository repository;
+  String XPATH = "/app:company_home/app:dictionary/cm:Lists/*";
+
   @Override
   protected String applyInternal() throws Exception {
-    String listPath = ("/app:company_home/app:dictionary/cm:Lists");
-    StringBuffer query = new StringBuffer();
-    query.append("+PATH:\"" + listPath + "//*\"");
 
-    SearchParameters sp = new SearchParameters();
-    sp.addStore(StoreRef.STORE_REF_WORKSPACE_SPACESSTORE);
-    sp.setLanguage(SearchService.LANGUAGE_LUCENE);
-    sp.setQuery(query.toString());
+   
+    List<NodeRef> lists = searchService.selectNodes(repository.getRootHome(), XPATH, null, namespaceService, false);
 
-    ResultSet results = null;
-
-    try {
-      results = searchService.query(sp);
-
-      for (ResultSetRow row : results) {
-        NodeRef nodeRef = row.getNodeRef();
-        copyNameToTitle(nodeRef);
-
-      }
-    } finally {
-      if (results != null) {
-        results.close();
-      }
+    
+    for (NodeRef list : lists){
+      copyNameToTitle(list);
     }
+
     return null;
   }
 
@@ -70,6 +59,8 @@ public class MigrateFromNameToTitlePatch extends AbstractPatch {
 
   }
 
- 
+  public void setRepository(Repository repository) {
+    this.repository = repository;
+  }
 
 }
