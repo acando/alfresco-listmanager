@@ -1,3 +1,5 @@
+# This codebase is no longer maintained. Please use the fork at https://github.com/Redpill-Linpro/alfresco-listmanager instead.
+
 # [Alfresco](http://www.alfresco.com) Listmanager
 This addon provides a way to manage list of values to be used in alfresco metadata forms. The model provided constraints are not 
 always suitable to use. Sometimes you just want to pick a value from a list without constraining anything. In addition there is no
